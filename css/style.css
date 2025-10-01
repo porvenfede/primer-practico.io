@@ -1,0 +1,64 @@
+
+
+
+header{
+    background-color: red;
+    grid-area: header;
+
+}
+nav{
+    background-color: blue;
+    grid-area: nav;
+}
+main{
+    background-color: green;
+    grid-area: main;
+}
+aside{
+    background-color: yellow;
+    grid-area: aside; 
+}
+footer{
+    background-color: blueviolet;
+    grid-area: footer;
+}
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 0.5fr 0.5fr;
+  grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+  gap: 10px;
+}
+
+/* TABLET (>=768px) */
+@media (min-width: 768px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr 0.5fr 0.5fr;
+    grid-template-areas: 
+      "header  header"
+      "nav     main"
+      "aside   main"
+      "footer  footer";
+  }
+}
+
+/* DESKTOP (>=1200px) */
+@media (min-width: 1200px) {
+  body {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
+    grid-template-areas: 
+      "header header  header"
+      "aside  aside    nav"
+      "main   main     nav"
+      "main   main     nav"
+      "footer footer  footer";
+  }
+}
